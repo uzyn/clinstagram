@@ -9,7 +9,8 @@
   },
   "license": "MIT",
   "dependencies": {
-    "ascii": "~0.0.1"
+    "ascii": "~0.0.1",
+    "instagram-node-lib": "~0.1.1"
   },
   "bin": "./clinstagram.js"
 }
