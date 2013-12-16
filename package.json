@@ -1,0 +1,15 @@
+{
+  "name": "clinstagram",
+  "version": "0.0.1",
+  "description": "Command line Instagram client.",
+  "author": "U-Zyn Chua <uzyn@zynesis.com> (https://github.com/uzyn)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uzyn/clinstagram.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "ascii": "~0.0.1"
+  },
+  "bin": "./clinstagram.js"
+}
