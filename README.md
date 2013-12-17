@@ -10,8 +10,8 @@ Why not!
 
 Features
 --
-- [ ] Image to ASCII art
-- [ ] Load popular images
+- [X] Image to ASCII art
+- [X] Load popular images
 
 Debug mode
 -----
