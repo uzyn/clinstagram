@@ -5,8 +5,8 @@ Instagram.set('client_id', config.client_id);
 Instagram.set('client_secret', config.client_secret);
 
 Instagram.tags.info({
-  name: 'blue',
-  complete: function(data){
-    console.log(data);
-  }
+    name: 'blue',
+    complete: function(data){
+        console.log(data);
+    }
 });
