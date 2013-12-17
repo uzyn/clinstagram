@@ -1,4 +1,6 @@
 {
 	"client_id": "INSERT INSTAGRAM CLIENT ID",
-	"client_secret": "INSERT INSTAGRAM CLIENT SECRET"
+	"client_secret": "INSERT INSTAGRAM CLIENT SECRET",
+    "image_location": "./tmp/",
+    "popular_count": 8
 }

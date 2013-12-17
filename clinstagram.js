@@ -19,7 +19,6 @@ var download = function(url, dest, callback) {
     });
 }
 
-
 instagram.set('client_id', config.client_id);
 instagram.set('client_secret', config.client_secret);
 
@@ -29,7 +28,7 @@ instagram.media.popular({
     complete: function(data){
         debug(data.length + ' popular medias loaded.');
 
-        console.log('Showing top 5 images...');
+        console.log('Showing top ' + config.popular_count + ' images...');
 
         var i = 0;
 
@@ -41,9 +40,9 @@ instagram.media.popular({
                 return;
             }
 
-            // Skip if more than 5 images
-            if (i >= 5) {
-                debug(media.id + ' - skipped as there has been more than 5 images.');
+            // Skip if more than config.popular_count images
+            if (i >= config.popular_count) {
+                debug(media.id + ' - skipped as there has been more than ' + config.popular_count + ' images.');
                 return;
             }
 
@@ -59,7 +58,7 @@ instagram.media.popular({
 
                 var pic = new ascii(filename);
 
-                pic.convert(function(err, result) {  
+                pic.convert(function(err, result) {
                     console.log('');
                     console.log(result);
                     console.log('Image ID: ' + media.id + ' by ' + media.user.username);
