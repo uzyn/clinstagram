@@ -1,9 +1,10 @@
 var config = require('./config.json'),
-    Instagram = require('instagram-node-lib'),
+    instagram = require('instagram-node-lib'),
     debug = require('debug')('CLInstagram'),
     util = require('util'),
     http = require('http'),
     fs = require('fs');
+    ascii = require('ascii');
 
 var download = function(url, dest, callback) {
     var file = fs.createWriteStream(dest);
@@ -19,12 +20,12 @@ var download = function(url, dest, callback) {
 }
 
 
-Instagram.set('client_id', config.client_id);
-Instagram.set('client_secret', config.client_secret);
+instagram.set('client_id', config.client_id);
+instagram.set('client_secret', config.client_secret);
 
 debug('Loading popular medias.');
 
-Instagram.media.popular({
+instagram.media.popular({
     complete: function(data){
         debug(data.length + ' popular medias loaded.');
 
@@ -46,8 +47,6 @@ Instagram.media.popular({
                 return;
             }
 
-            debug(i);
-
             /*
                 media.created_time
 
@@ -55,8 +54,15 @@ Instagram.media.popular({
             //console.log(util.inspect(media));
             //console.log(media.images.low_resolution.url);
             var filename = config.image_location + media.id + '.jpg';
-            download(media.images.low_resolution.url, filename, function() {
+            download(media.images.standard_resolution.url, filename, function() {
                 debug('Download complete: ' + filename);
+
+                var pic = new ascii(filename);
+
+                pic.convert(function(err, result) {
+                    console.log(result);
+                });
+
             });
 
             //process.exit();
@@ -66,6 +72,3 @@ Instagram.media.popular({
 });
 
 debug('Program execution complete');
-function downloadImage(url) {
-
-}
