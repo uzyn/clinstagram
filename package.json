@@ -11,7 +11,8 @@
   "dependencies": {
     "ascii": "~0.0.1",
     "instagram-node-lib": "~0.1.1",
-    "debug": "~0.7.4"
+    "debug": "~0.7.4",
+    "canvas": "~1.1.2"
   },
   "bin": "./clinstagram.js"
 }
