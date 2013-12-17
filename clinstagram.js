@@ -59,8 +59,12 @@ instagram.media.popular({
 
                 var pic = new ascii(filename);
 
-                pic.convert(function(err, result) {
+                pic.convert(function(err, result) {  
+                    console.log('');
                     console.log(result);
+                    console.log('Image ID: ' + media.id + ' by ' + media.user.username);
+                    console.log(media.images.standard_resolution.url);
+                    console.log('');
                 });
 
             });
